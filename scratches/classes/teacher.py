@@ -24,3 +24,12 @@ class Teacher(person.Person):
             print(f"{self.name} is now the headteacher.")
         else:
             print(f"{self.name} is no longer the headteacher.")
+
+    def __str__(self):
+        return super().__str__() + f", Subject: {self.subject}, " \
+                                   f"Is Headteacher: {self.is_headteacher}"
+
+    def __repr__(self):
+        return (super().__repr__()[:-1] +
+                f", subject='{self.subject}', " +
+                f"is_headteacher={self.is_headteacher})")
